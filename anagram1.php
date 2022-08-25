@@ -6,9 +6,9 @@ if(isset($_POST['submit']))
     $len2=strlen($_POST['name2']);
     if($len1==$len2)
     {
-        for($i=0;$i<$len;$i++)
+        for($i=0;$i<$len2;$i++)
         {
-            for($j=0;$j<$len;$j++)
+            for($j=0;$j<$len2;$j++)
             {
                 if($_POST['name1'][$i]==$_POST['name2'][$j])
                 {
@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
     <title>Document</title>
 </head>
 <body>
-    <form action="angram.php" method="post">
+    <form action="angram1.php" method="post">
         <label>name1</label>
         <input type="text" name="name1" id="">
         <label>name2</label>
