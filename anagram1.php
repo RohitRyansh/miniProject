@@ -1,7 +1,6 @@
 <?php
 if(isset($_POST['submit']))
     {
-    $len=strlen($_POST['name1']);
     $len1=strlen($_POST['name1']);
     $len2=strlen($_POST['name2']);
     if($len1==$len2)
@@ -37,6 +36,5 @@ if(isset($_POST['submit']))
         <input type="text" name="name2" id="">
         <input type="submit" value="submit" name="submit">
     </form>
-
 </body>
 </html>
