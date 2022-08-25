@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
                 }
             }
         }
-        echo ($len1==0)?"String is Anagram":"not Anagram";
+        echo $len1==0 ? "String is Anagram" : "not Anagram";
     }
 }    
 ?>
