@@ -5,11 +5,6 @@ body
     display: flex;
     flex-wrap: wrap;
 }
-.outer
-{
-    display: flex;
-    width: 100%;
-}
 .black
     {
         background-color:black;
