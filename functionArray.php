@@ -1,5 +1,5 @@
 <?php
-function f1($array)
+function functionArray($array)
 {
     for($i=0;$i<count($array);$i++)
     {
@@ -17,5 +17,5 @@ function f1($array)
     }
 }
 $array=array(12,2,12,8,2,7,9,9);
-$new[]=f1($array);
+functionArray($array);
 ?>
