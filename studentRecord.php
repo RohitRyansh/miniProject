@@ -4,13 +4,13 @@ function student($marks)
     switch($marks)
     {
     case $marks > 60:
-        echo "First";
+        echo "First division";
         break;
     case $marks>45 && $marks<=59:
-        echo "Second";
+        echo "Second division";
         break;
     case $marks>33 && $marks<=44:
-        echo "Third";
+        echo "Third division";
         break;
     default:
         echo "Fail";
