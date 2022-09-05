@@ -7,10 +7,9 @@ if(isset($_SESSION['loggedin']))
         header('location:listing.php');
     }
 }
-$id=$_GET['id'];
 foreach($_SESSION['User'] as $key=>$value)
 {
-    if($id==$value['id'])
+    if($_GET['id']==$value['id'])
     {
         unset($_SESSION['User'][$key]);
         echo "<h2>Data Deleted Successfully";

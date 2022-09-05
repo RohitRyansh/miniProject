@@ -33,18 +33,18 @@ loggedinValidate();
                             <p>
                                 let's get started with us.
                             </p>
-                            <input type="text" name="fname" id="fname" placeholder="First Name" />
+                            <input type="text" name="firstName" id="fname" placeholder="First Name" />
                             <?php
-                            if(!empty($_SESSION['error']['fname']))
+                            if(!empty($_SESSION['error']['firstName']))
                             {
-                                echo $_SESSION['error']['fname'];
+                                echo $_SESSION['error']['firstName'];
                             }
                             ?>
-                            <input type="text" name="lname" id="lname" placeholder="Last Name" />
+                            <input type="text" name="lastName" id="lname" placeholder="Last Name" />
                             <?php
-                            if(!empty($_SESSION['error']['lname']))
+                            if(!empty($_SESSION['error']['lastName']))
                             {
-                                echo $_SESSION['error']['lname'];
+                                echo $_SESSION['error']['lastName'];
                             }
                             ?>
                             <input type="email" name="email" id="email" placeholder="Email" />
@@ -71,16 +71,16 @@ loggedinValidate();
                             </h2>
                             <input type="email" name="emailLogin" id="emailLogin" placeholder="Email" />
                             <?php
-                            if(!empty($_SESSION['login']['emailLogin']))
+                            if(!empty($_SESSION['error']['emailLogin']))
                             {
-                                echo $_SESSION['login']['emailLogin'];
+                                echo $_SESSION['error']['emailLogin'];
                             }
                             ?>
                             <input type="password" name="passwordLogin" id="passwordLogin" placeholder="Password" />
                             <?php
-                            if(!empty($_SESSION['login']['passwordLogin']))
+                            if(!empty($_SESSION['error']['passwordLogin']))
                             {
-                                echo $_SESSION['login']['passwordLogin'];
+                                echo $_SESSION['error']['passwordLogin'];
                             }
                             ?>
                             <input type="submit" value="Log In" name="submit1" />

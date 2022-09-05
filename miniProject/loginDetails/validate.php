@@ -1,8 +1,6 @@
 <?php
  global $name;
  $name['error']=array();
- global $name1;
- $name1['login']=array();
 function loggedinValidate()
 {
     if(isset($_SESSION['loggedin']))
@@ -13,58 +11,34 @@ function loggedinValidate()
     }
     }
 }
-function fnameValidate($fname,$key)
+function Validate($fname,$key)
 {
     global $name;
     if(empty($fname))
     {
-        $name['error']['fname']="$key is required !";
+        $name['error'][$key]="$key is required !";
+    }
+    elseif($key=='firstName'|| $key=='lastName')
+    {
+        if(is_numeric($fname) || preg_match('/[^a-z_+-0-9]/i',$fname))
+        {
+            $name['error'][$key]="Please enter correct $key!";
+        }
+    }
+    elseif($key=='email'|| $key=='emailLogin')
+    {
+        if(!filter_var($fname, FILTER_VALIDATE_EMAIL))
+        {
+            $name['error'][$key]="Please enter a valid Email !";
+        }
+    }
+    elseif($key=='password')
+    {
+        if(strlen($fname)<8)
+        {
+            $name['error'][$key]="Password must be 8 digit!";
+        }
     }
     return $name['error'];
-}
-function lnameValidate($lname,$key)
-{   
-    global $name;
-    if(empty($lname))
-    {
-        $name['error']['lname']="$key is required !";
-    }
-    return $name['error'];
-}
-function emailValidate($email,$key)
-{
-    global $name;
-    if(empty($email))
-    {
-        $name['error']['email']="$key is required !";
-    }
-    return $name['error'];
-}
-function passwordValidate($password,$key)
-{
-    global $name;
-    if(empty($password))
-    {
-        $name['error']['password']="$key is required !";
-    }
-    return $name['error'];
-}
-function emailValidateLogin($emailLogin,$key)
-{
-    global $name1;
-    if(empty($emailLogin))
-    {
-        $name1['login']['emailLogin']="Email is required !";
-    }
-    return $name1['login'];
-}
-function passwordValidateLogin($passwordLogin,$key)
-{
-    global $name1;
-    if(empty($passwordLogin))
-    {
-        $name1['login']['passwordLogin']="Password is required !";
-    }
-    return $name1['login'];
 }
 ?>
