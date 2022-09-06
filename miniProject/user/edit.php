@@ -43,8 +43,8 @@
                             <p>
                                 let's get started with us.
                             </p>
-                            <input type="text" name="fname" id="fname" placeholder="First Name" value=<?php echo $byDefault['fname']?>>
-                            <input type="text" name="lname" id="lname" placeholder="Last Name" value=<?php echo $byDefault['lname']?>>
+                            <input type="text" name="firstName" id="firstName" placeholder="First Name" value=<?php echo $byDefault['firstName']?>>
+                            <input type="text" name="lastName" id="lastName" placeholder="Last Name" value=<?php echo $byDefault['lastName']?>>
                             <input type="email" name="email" id="email" placeholder="Email" value=<?php echo $byDefault['email']?>>
                             <input type="password" name="password" id="password" placeholder="Password" value=<?php echo $byDefault['password']?>>
                             <input type="submit"  name="submit" value=<?php echo isset($_GET['id'])? $_GET['id']:"edit"?>> 
