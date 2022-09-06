@@ -3,20 +3,16 @@ include 'frontpage.php';
 loggedinValidate();
 if(!empty($_POST['submit']))
 {
-    session_start();
     $error=array();
-    $error=Validate($_POST['firstName'],'firstName');
-    $error=Validate($_POST['lastName'],'lastName');
-    $error=Validate($_POST['email'],'email');
-    $error=Validate($_POST['password'],'password');
-    if(!empty($error))
+    $error=Validate($_POST,$_SESSION['User']);
+     if(!empty($error))
     {
         $_SESSION['error']=$error;
         header('location:frontpage.php');
     }
     else
     {
-        if(!empty($error))
+        if(!empty($_SESSION['error']))
         {
            unset($_SESSION['error']);
         }

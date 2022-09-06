@@ -1,6 +1,4 @@
 <?php
- global $name;
- $name['error']=array();
 function loggedinValidate()
 {
     if(isset($_SESSION['loggedin']))
@@ -11,34 +9,55 @@ function loggedinValidate()
     }
     }
 }
-function Validate($fname,$key)
+function Validate($value,$all)
 {
-    global $name;
-    if(empty($fname))
+    $name= array();
+    foreach($value as $key=>$value1)
     {
-        $name['error'][$key]="$key is required !";
-    }
-    elseif($key=='firstName'|| $key=='lastName')
-    {
-        if(is_numeric($fname) || preg_match('/[^a-z_+-0-9]/i',$fname))
+        if(empty($value1))
         {
-            $name['error'][$key]="Please enter correct $key!";
+            $name[$key]="$key is required !";
+        }
+        elseif($key=='firstName'|| $key=='lastName')
+        {
+            if(is_numeric($value1) || preg_match('/[^a-z_+-0-9]/i',$value1))
+            {
+                $name[$key]="Please enter correct $key!";
+
+            }
+        }
+        elseif($key=='email')
+        {
+            foreach($all as $key2=>$value2)
+            {
+                if($value['email']==$value2['email'])
+                {
+                $name[$key]="email already exist!";
+                break;
+                }
+            }
+            if(!filter_var($value1, FILTER_VALIDATE_EMAIL))
+            {
+                $name[$key]="Please enter a valid Email !";
+
+            }
+        }
+        
+        elseif($key=='password')
+        {
+            $value1=trim($value1);
+            if(empty($value))
+            {
+                $name[$key]="Don't enter spaces !";
+
+            }
+            elseif(strlen($value1)<8)
+            {
+                $name[$key]="Password must be 8 digit!";
+
+            }
         }
     }
-    elseif($key=='email'|| $key=='emailLogin')
-    {
-        if(!filter_var($fname, FILTER_VALIDATE_EMAIL))
-        {
-            $name['error'][$key]="Please enter a valid Email !";
-        }
-    }
-    elseif($key=='password')
-    {
-        if(strlen($fname)<8)
-        {
-            $name['error'][$key]="Password must be 8 digit!";
-        }
-    }
-    return $name['error'];
+return $name;
 }
 ?>

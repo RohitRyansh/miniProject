@@ -1,6 +1,7 @@
 <?php
 include 'validate.php';
 session_start();
+// session_destroy();
 loggedinValidate();
 ?>
 <!DOCTYPE html>
@@ -82,6 +83,7 @@ loggedinValidate();
                             {
                                 echo $_SESSION['error']['passwordLogin'];
                             }
+                            unset($_SESSION['error']);
                             ?>
                             <input type="submit" value="Log In" name="submit1" />
                         </div>

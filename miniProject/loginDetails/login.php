@@ -4,8 +4,7 @@ loggedinValidate();
 if(!empty($_POST['submit1']))
 {
     $error=array();
-    $error=Validate($_POST['emailLogin'],'emailLogin');
-    $error=Validate($_POST['passwordLogin'],'passwordLogin');
+    $error=Validate($_POST,null);
     if(!empty($error))
     {
         $_SESSION['error']=$error;
