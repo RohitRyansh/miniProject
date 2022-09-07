@@ -29,15 +29,15 @@
         }
         else
         {
-        foreach($_SESSION['List'] as $key=>$value)
-        {
-            if($value['id']==$_POST['submit'])
-            {       
-                $_SESSION['List'][$key]=$_POST;
-                $_SESSION['List'][$key]['id']=$_POST['submit'];    
-                header('location:dataList.php');     
+            foreach($_SESSION['List'] as $key=>$value)
+            {
+                if($value['id']==$_POST['submit'])
+                {       
+                    $_SESSION['List'][$key]=$_POST;
+                    $_SESSION['List'][$key]['id']=$_POST['submit'];    
+                    header('location:dataList.php');     
+                }
             }
-        }
         }
     }
 ?>
@@ -45,7 +45,7 @@
 <html lang="en">
 <head>
     <title>Edit Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main>
@@ -71,7 +71,7 @@
                             echo $_SESSION['error']['description'];
                         }
                         ?>
-                        <input type="submit"  name="submit" value=<?php echo isset($_GET['id'])? $_GET['id']:"edit"?>> 
+                        <input type="submit"  name="submit" value="Save"> 
                     </div>
                 </form>
         </section> 
