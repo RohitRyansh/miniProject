@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <div class="view">
     <h2>
         <u>Data Description</u>

@@ -29,12 +29,13 @@
         }
         else
         {
-            foreach($_SESSION['List'] as $key=>$value)
+        foreach($_SESSION['List'] as $key=>$value)
             {
-                if($value['id']==$_POST['submit'])
-                {       
+                if($value['id']==$_GET['id'])
+                {     
                     $_SESSION['List'][$key]=$_POST;
-                    $_SESSION['List'][$key]['id']=$_POST['submit'];    
+                    $_SESSION['List'][$key]['id']=$_POST['submit'];  
+                     
                     header('location:dataList.php');     
                 }
             }
