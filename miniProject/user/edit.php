@@ -32,7 +32,7 @@
     <main>
         <article>
             <h1>
-                WELCOME to Login World!
+                WELCOME to Login World
             </h1>
             <section class="frontpage">
                     <form action="edit.php" method="post">
